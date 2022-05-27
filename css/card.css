@@ -1,0 +1,15 @@
+.card {
+  border: 5px solid rgb(28, 255, 28);
+  background-color: rebeccapurple;
+  list-style: none;
+  color: aliceblue;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hide {
+  display: none;
+}
