@@ -1,8 +1,11 @@
 fetch('https://rickandmortyapi.com/api/character')
   .then(response => response.json())
-  .then(onData);
+  .then(RickAndMorty)
+  .catch(error => {
+    error.message;
+  });
 
-function onData(data) {
+function RickAndMorty(data) {
   const people = data.results;
   const list = document.createElement('ul');
   list.setAttribute('role', 'list');
@@ -10,15 +13,19 @@ function onData(data) {
   people.forEach(person => {
     const listItem = document.createElement('li');
     listItem.className = 'card';
-
-    listItem.innerText = `${person.name} (${person.status})`;
+    listItem.innerHTML = ` <img src="${person.image}" alt="character-image">`;
+    listItem.innerHTML = `${person.name} (${person.status}) <img src="${person.image}" alt="character-image">`;
     const personDetails = document.createElement('dl');
     personDetails.className = 'details';
     personDetails.innerHTML = `
+    <dt>Species:</dt>
+    <dd>${person.species}</dd>
     <dt>Last Known:</dt>
-    <dd>${person.location}</dd>
-    <dt>first seen:</dt>
-    <dd>${person.origin}</dd>`;
+    <dd>${person.location.name}</dd>
+    <dt>First Seen:</dt>
+    <dd>${person.origin.name}</dd>
+
+    `;
     listItem.append(personDetails);
     personDetails.classList.add('hide');
     listItem.addEventListener('click', () => {
