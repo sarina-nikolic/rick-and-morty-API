@@ -1,9 +1,7 @@
 fetch('https://rickandmortyapi.com/api/character')
   .then(response => response.json())
   .then(RickAndMorty)
-  .catch(error => {
-    error.message;
-  });
+  .catch(onError);
 
 function RickAndMorty(data) {
   const people = data.results;
@@ -34,4 +32,8 @@ function RickAndMorty(data) {
     list.append(listItem);
   });
   console.log(people);
+}
+function onError(error) {
+  document.body.innerText =
+    'Oh no! This planet is not available – ' + error.message;
 }
