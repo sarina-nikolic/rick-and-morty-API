@@ -3,6 +3,14 @@
 }
 
 body {
-  font-family: sans-serif;
-  margin: 0;
+  font-family: 'Amatic SC', cursive;
+  font-size: 2rem;
+  background-color: black;
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 3rem;
+  text-align: center;
+  color: lime;
 }
