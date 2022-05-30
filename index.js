@@ -1,9 +1,9 @@
 fetch('https://rickandmortyapi.com/api/character')
   .then(response => response.json())
-  .then(RickAndMorty)
+  .then(createList)
   .catch(onError);
 
-function RickAndMorty(data) {
+function createList(data) {
   const people = data.results;
   const list = document.createElement('ul');
   list.setAttribute('role', 'list');
@@ -11,7 +11,6 @@ function RickAndMorty(data) {
   people.forEach(person => {
     const listItem = document.createElement('li');
     listItem.className = 'card';
-    listItem.innerHTML = ` <img src="${person.image}" alt="character-image">`;
     listItem.innerHTML = `${person.name} (${person.status}) <img src="${person.image}" alt="character-image">`;
     const personDetails = document.createElement('dl');
     personDetails.className = 'details';
@@ -21,19 +20,16 @@ function RickAndMorty(data) {
     <dt>Last Known:</dt>
     <dd>${person.location.name}</dd>
     <dt>First Seen:</dt>
-    <dd>${person.origin.name}</dd>
-
-    `;
-    listItem.append(personDetails);
-    personDetails.classList.add('hide');
+    <dd>${person.origin.name}</dd>`;
     listItem.addEventListener('click', () => {
       personDetails.classList.toggle('hide');
+      listItem.append(personDetails);
     });
     list.append(listItem);
   });
-  console.log(people);
 }
+
 function onError(error) {
   document.body.innerText =
-    'Oh no! This planet is not available – ' + error.message;
+    'Oh no! This Character-List is not available – ' + error.message;
 }

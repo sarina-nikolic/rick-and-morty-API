@@ -1,5 +1,5 @@
 {
-  "name": "api-powered-app-simple-template",
+  "name": "The Rick-and-Morty-API: Character List",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,7 +17,7 @@
     "url": "git+https://github.com/neuefische/api-powered-app-simple-template.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "The nerds",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/neuefische/api-powered-app-simple-template/issues"
