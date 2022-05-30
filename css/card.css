@@ -1,15 +1,15 @@
 .card {
-  border: 5px solid rgb(28, 255, 28);
+  border: 5px solid #1cff1c;
   background-color: rebeccapurple;
   margin: 0.5rem;
   padding: 2rem;
-
   color: aliceblue;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-ul {
+
+ul[role='list'] {
   flex-direction: column;
   list-style: none;
   margin: 0;
